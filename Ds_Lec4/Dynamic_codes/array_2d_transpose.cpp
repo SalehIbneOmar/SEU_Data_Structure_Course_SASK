@@ -35,17 +35,7 @@ int main(){
 
     cout <<endl;
     cout <<"Transpose Matrix: "<<endl;
-    if(row!=1 && col!=1 && row!=col){
-        temp = col;
-        col = row;
-        row = temp;
-    }
-    else if(row ==1 && col!=row){
-        temp = col;
-        col = row;
-        row = temp;
-    }
-    else if(col==1 && row!=col){
+    if(row!=col || col!=row){
         temp = col;
         col = row;
         row = temp;
