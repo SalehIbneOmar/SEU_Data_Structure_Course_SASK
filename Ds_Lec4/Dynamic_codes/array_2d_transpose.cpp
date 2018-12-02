@@ -3,13 +3,13 @@ using namespace std;
 
 int main(){
 
-    int row, col;
+    int row, col, temp;
     cout <<"Enter row size: "<<endl;
     cin >>row;
     cout <<"Enter col size: "<<endl;
     cin >>col;
 
-    int matrix[row][col], transpose[row][col];
+    int matrix[row][col];
 
 //============================= Basic part =============================
     for(int r=0; r<row; r++){
@@ -35,9 +35,25 @@ int main(){
 
     cout <<endl;
     cout <<"Transpose Matrix: "<<endl;
+    if(row!=1 && col!=1 && row!=col){
+        temp = col;
+        col = row;
+        row = temp;
+    }
+    else if(row ==1 && col!=row){
+        temp = col;
+        col = row;
+        row = temp;
+    }
+    else if(col==1 && row!=col){
+        temp = col;
+        col = row;
+        row = temp;
+    }
+
     for(int r=0; r<row; r++){
         for(int c=0; c<col; c++){
-
+            int transpose[row][col];
             transpose[r][c] = matrix[c][r];
             cout <<transpose[r][c]<<" ";
         }
