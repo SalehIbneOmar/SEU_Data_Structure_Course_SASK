@@ -41,9 +41,10 @@ int main(){
         row = temp;
     }
 
+    int transpose[row][col];
+
     for(int r=0; r<row; r++){
         for(int c=0; c<col; c++){
-            int transpose[row][col];
             transpose[r][c] = matrix[c][r];
             cout <<transpose[r][c]<<" ";
         }
